@@ -9,7 +9,7 @@ mkdir -p $TMPDIR
 convpdb.pl -out generic $1 | pdbelement.pl > $TMPDIR/$$.pdb
 cd $TMPDIR
 
-$MOLP/cmdline/oneline-analysis . | tail -1 | awk -F: '{print $32}'
+$MOLPROBITY/cmdline/oneline-analysis . | tail -1 | awk -F: '{print $32}'
 
 cd $cwd
 /bin/rm -rf $TMPDIR
