@@ -19,8 +19,17 @@ local geometry protein structure refinement via MD
   * You have to set the following environment variables: 
     * MMTSBDIR: path to the MMTSBDIR home directory
     * CHARMMEXEC: path to the executable file of CHARMM 
+    * CHARMMDATA: path to the 'toppar' directory that comes with the CHARMM distribution
     * MOLPROBITY: path to the top of the MolProbity tree
     * LOCPREFMD: path to the locPREFMD github repository after checking out
+
+1.3 Preparing CHARMM
+  * Compile a full version of CHARMM (a 'lite' version will not work)
+  * There is a duplicate angle in the protein parameter file that comes with CHARMM that is causing problems with recent versions of CHARMM. 
+    If you see the error message:
+      PARRDR> Error: Repeated ANGLE parameter ( 82567): NH2   CT2   CD
+    edit '$CHARMMDATA/par_all36_prot.prm' find the following line and add an exclamation mark in front as below:
+      !NH2  CT2  CD    52.000   108.0000
 
 ## 2. How to use locPREFMD
 2.1. Prepare a input protein structure in PDB format
