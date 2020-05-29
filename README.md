@@ -31,7 +31,7 @@ local geometry protein structure refinement via MD
   
   * If you get the above error, edit '$CHARMMDATA/par_all36_prot.prm', find the following line and add an exclamation mark in front as below:
   
-      !NH2  CT2  CD    52.000   108.0000
+      !NH2  CT2  CD    50.000   107.0000      ! From ALA Dipep. NH1-CT2-C, Neutral Gly Nterminus
 
 ## 2. How to use locPREFMD
 2.1. Prepare a input protein structure in PDB format
