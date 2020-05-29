@@ -25,10 +25,12 @@ local geometry protein structure refinement via MD
 
 1.3 Preparing CHARMM
   * Compile a full version of CHARMM (a 'lite' version will not work)
-  * There is a duplicate angle in the protein parameter file that comes with CHARMM that is causing problems with recent versions of CHARMM. 
-    If you see the error message:
+  * There is a duplicate angle in the protein parameter file that comes with CHARMM that is causing problems with recent versions of CHARMM. You may see the following error message:
+  
       PARRDR> Error: Repeated ANGLE parameter ( 82567): NH2   CT2   CD
-    edit '$CHARMMDATA/par_all36_prot.prm' find the following line and add an exclamation mark in front as below:
+  
+  * If you get the above error, edit '$CHARMMDATA/par_all36_prot.prm', find the following line and add an exclamation mark in front as below:
+  
       !NH2  CT2  CD    52.000   108.0000
 
 ## 2. How to use locPREFMD
