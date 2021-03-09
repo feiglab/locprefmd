@@ -215,7 +215,7 @@ reslist=`cat $tag.checkring.out | awk '/CROSS/ {print $3}' | sort -u | xargs ech
 
 while [ "$reslist" -a $xtag -lt 6 ]; do
   convpdb.pl -setall -setchain " " -out generic -setseg PRO0 $inp | grep -v TER > $tag.tinp.pdb
-  rebpart.pl $tag.tinp.pdb $reslist | convpdb.pl -setchain X | convpdb.pl -segnames | minCHARMM.pl -nochain -custom $tag.consdihe.custom -cons ca $tag.clean.cinp.pdb 0:999_$caforce -par minsteps=$minsteps,$ffpar -log "$tag.m1x${xtag}.log" > $tag.min1x$xtag.pdb
+  rebpart.pl $tag.tinp.pdb $reslist | convpdb.pl -setchain " " -setseg "PROX" | minCHARMM.pl -nochain -custom $tag.consdihe.custom -cons ca $tag.clean.cinp.pdb 0:999_$caforce -par minsteps=$minsteps,$ffpar -log "$tag.m1x${xtag}.log" > $tag.min1x$xtag.pdb
   /bin/rm -f $tag.tinp.pdb
 
   inp="$tag.min1x$xtag.pdb"

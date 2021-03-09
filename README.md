@@ -45,5 +45,5 @@ local geometry protein structure refinement via MD
   * M. Feig: Local protein structure refinement via molecular dynamics simulation with locPREFMD. J. Chem. Inf. Model. (2016) 56, 1304-1312
 
 ## 5. Contact
-  * feig@msu.edu
+  * mfeiglab@gmail.com
 
